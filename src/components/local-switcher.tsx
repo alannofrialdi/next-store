@@ -2,6 +2,8 @@
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
+import { usePathname } from "next/navigation";
+
 import {
   Select,
   SelectContent,
@@ -16,11 +18,13 @@ export default function LocalSwitcher() {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const localeActive = useLocale();
+  const pathname = usePathname();
 
   const handleChange = (locale: string) => {
     startTransition(() => {
-      router.replace(`/${locale}/home`);
+      router.replace(`/${locale}${pathname.slice(3)}`);
     });
+    router.refresh();
   };
 
   return (

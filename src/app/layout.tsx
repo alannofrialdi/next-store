@@ -6,6 +6,7 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,12 @@ export default async function RootLayout({
   children,
   params: { locale },
 }: Readonly<RootLayoutProps>) {
-  const messages = await getMessages();
+  let messages;
+  try {
+    messages = await getMessages();
+  } catch (error) {
+    notFound();
+  }
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -39,7 +45,7 @@ export default async function RootLayout({
           fontSans.variable,
         )}
       >
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <NavbarMenu />
           <main className={inter.className}>{children}</main>
         </NextIntlClientProvider>
