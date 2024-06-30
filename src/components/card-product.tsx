@@ -29,6 +29,24 @@ export default function CardProduct() {
       price: 5000,
       description: "lorem ipsum dolor sir amt",
     },
+    {
+      title: "Air Jordan",
+      img: "/shoes1.jpg",
+      price: 1000,
+      description: "lorem ipsum dolor sir amt",
+    },
+    {
+      title: "Vantella",
+      img: "/shoes2.jpg",
+      price: 3000,
+      description: "lorem ipsum dolor sir amt",
+    },
+    {
+      title: "Homiped",
+      img: "/shoes3.jpg",
+      price: 5000,
+      description: "lorem ipsum dolor sir amt",
+    },
   ];
 
   return (

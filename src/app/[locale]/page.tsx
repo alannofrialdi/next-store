@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion, useScroll } from "framer-motion";
 import CardProduct from "@/components/card-product";
 import { useRef, useEffect, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Reveal } from "@/components/reveal";
 
 type OffsetType = (
   | `${number} ${number}`
@@ -16,19 +18,24 @@ type OffsetType = (
 export default function Home() {
   const t = useTranslations("Index");
   const ref = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState<OffsetType>(["0 1", "0.6 1"]);
+  const [offset, setOffset] = useState<OffsetType>(["0 1", "0.33 1"]);
+  const [mobile, setMobile] = useState<boolean>(false);
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: offset,
   });
 
+  console.log(scrollYProgress);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setOffset(["0 1", "0.6 1"]);
+        setOffset(["0 1", "0.5 1.4"]);
+        setMobile(true);
       } else {
-        setOffset(["0 1", "1.33 1"]);
+        setOffset(["0 1", "0.5 1"]);
+        setMobile(false);
       }
     };
 
@@ -42,10 +49,10 @@ export default function Home() {
 
   return (
     <div>
-      <div className="min-h-dvh">
+      <main className="min-h-dvh">
         <section
           id="brand"
-          className="max-h-screen grid grid-rows-3  content-center lg:grid-rows-3 place-items-center px-4"
+          className="min-h-screen grid grid-rows-3  content-center lg:grid-rows-3 place-items-center px-4 mt-5"
         >
           <motion.div
             initial={{ y: "-30%", opacity: 0 }}
@@ -94,25 +101,55 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <motion.div
-          ref={ref}
-          style={{
-            scale: scrollYProgress,
-            opacity: scrollYProgress,
-          }}
-          className="mb-10"
-        >
-          <section
-            id="products"
+        <section className="lg:min-h-screen my-10">
+          <motion.div
+            ref={ref}
+            style={{
+              scale: scrollYProgress,
+              opacity: scrollYProgress,
+            }}
             className="flex flex-col justify-center items-center"
           >
-            <h1 className="font-bold md:text-3xl lg:text-4xl text-2xl mb-4">
+            <h1
+              id="products"
+              className="text-3xl font-extrabold tracking-tight text-center lg:text-5xl mb-10"
+            >
               {t("bestSeller")}
             </h1>
             <CardProduct />
-          </section>
-        </motion.div>
-      </div>
+          </motion.div>
+        </section>
+
+        <section id="about" className="lg:min-h-screen ">
+          <Reveal>
+            <div className="flex gap-4 p-20 bg-slate-500 lg:flex-row flex-col items-center justify-center">
+              <Image
+                // hidden={mobile}
+                src={"/abt.jpg"}
+                alt="nike"
+                width={300}
+                height={250}
+                className="rounded shadow-xl shadow-slate-800 hover:scale-110 transition duration-500 cursor-pointer"
+              />
+              <div className="tracking-wide flex flex-col w-fit mt-4">
+                <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight text-center lg:text-5xl">
+                  {t("about")}
+                </h1>
+                <TypographyP />
+              </div>
+            </div>
+          </Reveal>
+        </section>
+      </main>
     </div>
+  );
+}
+
+export function TypographyP() {
+  const t = useTranslations("Index");
+  return (
+    <p className="leading-7 [&:not(:first-child)]:mt-6 text-center  line-clamp-3 hover:line-clamp-none md:px-4">
+      {t("descAbout")}
+    </p>
   );
 }
