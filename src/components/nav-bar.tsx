@@ -25,17 +25,17 @@ export default function NavbarMenu() {
   const components: { title: string; href: string; description: string }[] = [
     {
       title: t("ourProducts"),
-      href: `/${localeActive}/home`,
+      href: `/${localeActive}`,
       description: t("descMenuProducts"),
     },
     {
       title: t("ourProducts"),
-      href: `/${localeActive}/home`,
+      href: `/${localeActive}`,
       description: t("descMenuProducts"),
     },
     {
       title: t("ourProducts"),
-      href: `/${localeActive}/home`,
+      href: `/${localeActive}`,
       description: t("descMenuProducts"),
     },
     {
@@ -55,7 +55,7 @@ export default function NavbarMenu() {
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/en/home"
+                    href={`/${localeActive}`}
                   >
                     <Image
                       alt="nike"
