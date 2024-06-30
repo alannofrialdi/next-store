@@ -145,7 +145,7 @@ export default function Home() {
   );
 }
 
-export function TypographyP() {
+ function TypographyP() {
   const t = useTranslations("Index");
   return (
     <p className="leading-7 [&:not(:first-child)]:mt-6 text-center  line-clamp-3 hover:line-clamp-none md:px-4">
