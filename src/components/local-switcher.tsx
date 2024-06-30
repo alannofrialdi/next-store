@@ -33,14 +33,14 @@ export default function LocalSwitcher() {
       disabled={isPending}
       defaultValue={localeActive}
     >
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[120px]">
         <SelectValue placeholder="Translate" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Language</SelectLabel>
-          <SelectItem value="en">English</SelectItem>
-          <SelectItem value="id">Indonesian</SelectItem>
+          <SelectItem value="en">English - US</SelectItem>
+          <SelectItem value="id">Indonesian - ID</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

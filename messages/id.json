@@ -1,9 +1,14 @@
 {
   "Index": {
-    "company": "Perusahaan Kita",
+    "company": "Perusahaan Kami",
     "slogan": "Komponen yang didesain dengan indah yang dapat Anda salin dan tempel ke aplikasi Anda. Dapat diakses. Dapat disesuaikan. Sumber Terbuka.",
-    "about": "Tentang Kita",
-    "ourProducts": "Produk Kita",
-    "descMenuProducts": "Dialog modal yang menyela pengguna dengan konten penting dan mengharapkan tanggapan."
+    "about": "Tentang Kami",
+    "ourProducts": "Produk Kami",
+    "descMenuProducts": "Dialog modal yang menyela pengguna dengan konten penting dan mengharapkan tanggapan.",
+    "contact": "Kontak Kami",
+    "comfortable": "Kenyamanan",
+    "quality": "Kualitas",
+    "cheap": "Murah",
+    "bestSeller": "Produk Terbaik"
   }
 }

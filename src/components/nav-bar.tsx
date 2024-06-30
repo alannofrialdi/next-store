@@ -39,8 +39,8 @@ export default function NavbarMenu() {
       description: t("descMenuProducts"),
     },
     {
-      title: t("ourProducts"),
-      href: `/${localeActive}/home`,
+      title: t("bestSeller"),
+      href: `#products`,
       description: t("descMenuProducts"),
     },
   ];
@@ -72,14 +72,26 @@ export default function NavbarMenu() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem>
+                <Link href={`/${localeActive}/about`} legacyBehavior passHref>
+                  <NavigationMenuLink className="underline p-2 font-bold flex justify-center items-center">
+                    {t("about")}
+                  </NavigationMenuLink>
+                </Link>
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
+              <ListItem>
+                <Link href={`/${localeActive}/contact`} legacyBehavior passHref>
+                  <NavigationMenuLink className="underline p-2 font-bold flex justify-center items-center">
+                    {t("contact")}
+                  </NavigationMenuLink>
+                </Link>
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem>
+                <Link href={`/${localeActive}/product`} legacyBehavior passHref>
+                  <NavigationMenuLink className="underline p-2 font-bold flex justify-center items-center">
+                    {t("ourProducts")}
+                  </NavigationMenuLink>
+                </Link>
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -99,13 +111,6 @@ export default function NavbarMenu() {
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/en/about" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              {t("about")}
-            </NavigationMenuLink>
-          </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <LocalSwitcher />
