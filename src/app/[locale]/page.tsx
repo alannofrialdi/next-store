@@ -106,7 +106,9 @@ export default function Home() {
             id="products"
             className="flex flex-col justify-center items-center"
           >
-            <h1 className="font-bold text-6xl mb-4">{t("bestSeller")}</h1>
+            <h1 className="font-bold md:text-3xl lg:text-4xl text-2xl mb-4">
+              {t("bestSeller")}
+            </h1>
             <CardProduct />
           </section>
         </motion.div>
