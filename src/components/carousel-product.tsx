@@ -57,10 +57,10 @@ export function CarouselProduct() {
     },
   ];
   return (
-    <Carousel className="w-[220px] lg:w-full max-w-xs">
-      <CarouselContent className="">
+    <Carousel className="w-[220px] sm:w-[300px] md:w-[500px] lg:w-[700px] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl">
+      <CarouselContent>
         {products.map((product, index) => (
-          <CarouselItem key={index}>
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={index}>
             <div className="p-1">
               <Card
                 key={index}
@@ -69,7 +69,7 @@ export function CarouselProduct() {
                 <CardHeader>
                   <CardTitle className="text-center">{product.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
                   <Image
                     src={product.img}
                     alt={product.title}

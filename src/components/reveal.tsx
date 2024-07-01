@@ -42,7 +42,7 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
       >
         {children}
       </motion.div>
-      {theme === "light" && (
+      {/* {theme === "light" && (
         <motion.div
           variants={{
             hidden: { left: 0 },
@@ -61,7 +61,7 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
           }}
           transition={{ duration: 1.25, ease: "easeIn" }}
         />
-      )}
+      )} */}
     </div>
   );
 };

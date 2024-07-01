@@ -10,12 +10,12 @@ const BrandSection: React.FC<BrandSectionProps> = ({ t, mobile }) => {
   return (
     <section
       id="brand"
-      className="min-h-screen grid grid-rows-3 content-center lg:grid-rows-1 place-items-center p-6 mt-4 lg:grid-cols-2"
+      className="min-h-screen grid grid-rows-3 content-center lg:grid-rows-1 place-items-center p-6 mt-4 mb-10 lg:grid-cols-2 "
     >
       <motion.div
         initial={{ y: "-30%", opacity: 0 }}
         animate={{ y: "0%", opacity: 1, transition: { duration: 1.5 } }}
-        className="dark:bg-slate-200 rounded p-10 dark:shadow-lg dark:shadow-slate-400 dark:animate-pulse"
+        className="dark:bg-slate-200 rounded p-10 dark:shadow-lg dark:shadow-slate-400 "
       >
         <Image
           src={"/nike.png"}
@@ -42,25 +42,25 @@ const BrandSection: React.FC<BrandSectionProps> = ({ t, mobile }) => {
           variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
           className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-7xl"
         >
-          Alan Store
+          ALAN STORE
         </motion.p>
         <motion.p
           variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
           className="font-bold text-2xl lg:text-4xl"
         >
-          {t("comfortable")}
+          {t("comfortable").toUpperCase()}
         </motion.p>
         <motion.p
           variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
           className="font-bold text-2xl lg:text-4xl"
         >
-          {t("quality")}
+          {t("quality").toUpperCase()}
         </motion.p>
         <motion.p
           variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
           className="font-bold text-2xl lg:text-4xl"
         >
-          {t("cheap")}
+          {t("cheap").toUpperCase()}
         </motion.p>
       </motion.div>
     </section>

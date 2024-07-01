@@ -11,7 +11,10 @@ interface ProductSectionProps {
 const ProductSection = forwardRef<HTMLDivElement, ProductSectionProps>(
   ({ t, scrollYProgress }, ref) => {
     return (
-      <section className="min-h-screen">
+      <section
+        id="products"
+        className="min-h-screen my-20 flex items-center justify-center "
+      >
         <motion.div
           ref={ref}
           style={{
@@ -20,11 +23,8 @@ const ProductSection = forwardRef<HTMLDivElement, ProductSectionProps>(
           }}
           className="flex flex-col justify-center items-center"
         >
-          <h1
-            id="products"
-            className="text-3xl font-extrabold tracking-tight text-center lg:text-5xl mb-10"
-          >
-            {t("bestSeller")}
+          <h1 className="text-3xl font-extrabold tracking-tight text-center lg:text-5xl mb-10">
+            {t("bestSeller").toUpperCase()}
           </h1>
           <CarouselProduct />
         </motion.div>
