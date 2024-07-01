@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
 interface Props {
@@ -7,7 +7,13 @@ interface Props {
 }
 
 export const Reveal = ({ children, width = "fit-content" }: Props) => {
-  let theme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setTheme(localStorage.getItem("theme"));
+    }
+  }, []);
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -15,12 +21,14 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
   });
   const mainControl = useAnimation();
   const slideControl = useAnimation();
+
   useEffect(() => {
     if (isInView) {
       mainControl.start("visible");
       slideControl.start("visible");
     }
   }, [isInView, mainControl, slideControl]);
+
   return (
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div
@@ -34,13 +42,13 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
       >
         {children}
       </motion.div>
-      {theme == "light" && (
+      {theme === "light" && (
         <motion.div
           variants={{
             hidden: { left: 0 },
             visible: { left: "100%" },
           }}
-          initial={theme == "light" && "show" ? "show" : "hidden"}
+          initial="hidden"
           animate={slideControl}
           style={{
             position: "absolute",

@@ -69,6 +69,9 @@ const FormComponent: React.FC<FormComponentProps> = ({ t }) => {
     <>
       <ToastContainer />
       <Form {...form}>
+        <h1 className="scroll-m-20 text-2xl font-extrabold tracking-tight lg:text-3xl text-center my-4  text-[#1f1f1f] dark:text-[#f1f1f1]">
+          {t("contact")}
+        </h1>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
             control={form.control}
