@@ -25,7 +25,7 @@ const handleResize = (
   setMobile: React.Dispatch<React.SetStateAction<boolean>>,
 ) => {
   if (window.innerWidth < 768) {
-    setOffset(["0 1", "0.55 1.1"]);
+    setOffset(["0 1", "1.33 1"]);
     setMobile(true);
   } else {
     setOffset(["0 1", "0.22 0.7"]);
