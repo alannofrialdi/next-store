@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import CardProduct from "@/components/card-product";
 import { forwardRef } from "react";
+import { CarouselProduct } from "@/components/carousel-product";
 
 interface ProductSectionProps {
   t: any;
@@ -11,7 +11,7 @@ interface ProductSectionProps {
 const ProductSection = forwardRef<HTMLDivElement, ProductSectionProps>(
   ({ t, scrollYProgress }, ref) => {
     return (
-      <section className="lg:min-h-screen mb-20">
+      <section className="min-h-screen">
         <motion.div
           ref={ref}
           style={{
@@ -26,7 +26,7 @@ const ProductSection = forwardRef<HTMLDivElement, ProductSectionProps>(
           >
             {t("bestSeller")}
           </h1>
-          <CardProduct />
+          <CarouselProduct />
         </motion.div>
       </section>
     );

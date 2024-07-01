@@ -25,10 +25,10 @@ const handleResize = (
   setMobile: React.Dispatch<React.SetStateAction<boolean>>,
 ) => {
   if (window.innerWidth < 768) {
-    setOffset(["0 1", "0.5 1.4"]);
+    setOffset(["0 1", "0.55 1"]);
     setMobile(true);
   } else {
-    setOffset(["0 1", "0.5 1"]);
+    setOffset(["0 1", "0.44 1"]);
     setMobile(false);
   }
 };
@@ -37,7 +37,7 @@ export default function Home() {
   const t = useTranslations("Index");
   const ref = useRef<HTMLDivElement>(null);
 
-  const [offset, setOffset] = useState<OffsetType>(["0 1", "0.33 1"]);
+  const [offset, setOffset] = useState<OffsetType>(["1 1", "1 1"]);
   const [mobile, setMobile] = useState<boolean>(false);
 
   const phone = "6282124995966";
