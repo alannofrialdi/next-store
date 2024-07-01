@@ -45,7 +45,7 @@ export default function NavbarMenu() {
     },
   ];
   return (
-    <NavigationMenu className="container pt-4">
+    <NavigationMenu className="container my-2">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>{t("company")}</NavigationMenuTrigger>

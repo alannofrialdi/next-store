@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ModeToggle } from "@/components/theme=switcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,7 +46,16 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <NavbarMenu />
-          <main className={inter.className}>{children}</main>
+          <main className={inter.className}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </main>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -7,6 +7,8 @@ interface Props {
 }
 
 export const Reveal = ({ children, width = "fit-content" }: Props) => {
+  let theme = localStorage.getItem("theme");
+
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -23,33 +25,35 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 85 },
+          hidden: { opacity: 0, y: 75 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
         animate={mainControl}
-        transition={{ duration: 1.5, delay: 0.25 }}
+        transition={{ duration: 1.25, delay: 0.25 }}
       >
         {children}
       </motion.div>
-      <motion.div
-        variants={{
-          hidden: { left: 0 },
-          visible: { left: "100%" },
-        }}
-        initial="hidden"
-        animate={slideControl}
-        style={{
-          position: "absolute",
-          top: 4,
-          bottom: 4,
-          left: 0,
-          right: 0,
-          background: "#212121",
-          zIndex: 10,
-        }}
-        transition={{ duration: 1.5, ease: "easeIn" }}
-      />
+      {theme == "light" && (
+        <motion.div
+          variants={{
+            hidden: { left: 0 },
+            visible: { left: "100%" },
+          }}
+          initial={theme == "light" && "show" ? "show" : "hidden"}
+          animate={slideControl}
+          style={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            background: "#212121",
+            zIndex: 10,
+          }}
+          transition={{ duration: 1.25, ease: "easeIn" }}
+        />
+      )}
     </div>
   );
 };
