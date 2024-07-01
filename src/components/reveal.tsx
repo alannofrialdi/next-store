@@ -38,30 +38,29 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
         }}
         initial="hidden"
         animate={mainControl}
-        transition={{ duration: 1.25, delay: 0.25 }}
+        transition={{ duration: 1.35, delay: 0.25 }}
       >
         {children}
       </motion.div>
-      {/* {theme === "light" && (
-        <motion.div
-          variants={{
-            hidden: { left: 0 },
-            visible: { left: "100%" },
-          }}
-          initial="hidden"
-          animate={slideControl}
-          style={{
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            background: "#212121",
-            zIndex: 10,
-          }}
-          transition={{ duration: 1.25, ease: "easeIn" }}
-        />
-      )} */}
+
+      <motion.div
+        variants={{
+          hidden: { left: 0 },
+          visible: { left: "100%" },
+        }}
+        initial="hidden"
+        animate={slideControl}
+        style={{
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          backdropFilter: "blur(2px)",
+          zIndex: 10,
+        }}
+        transition={{ duration: 1.35, ease: "easeIn" }}
+      />
     </div>
   );
 };

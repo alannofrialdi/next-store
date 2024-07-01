@@ -83,8 +83,8 @@ export default function Home() {
           <ModeToggle />
         </div>
         <BrandSection t={t} mobile={mobile} />
-        <ProductSection ref={ref} t={t} scrollYProgress={scrollYProgress} />
         <AboutSection t={t} />
+        <ProductSection ref={ref} t={t} scrollYProgress={scrollYProgress} />
         <ContactSection t={t} />
         <section id="footer" className="my-2">
           <p className="text-sm text-center text-muted-foreground">
