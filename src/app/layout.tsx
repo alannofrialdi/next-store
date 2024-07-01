@@ -8,7 +8,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/theme=switcher";
+import { ModeToggle } from "@/components/theme-switcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
