@@ -29,8 +29,8 @@ export default function NavbarMenu() {
       description: t("descMenuProducts"),
     },
     {
-      title: t("ourProducts"),
-      href: `/${localeActive}`,
+      title: t("contact"),
+      href: `#contact`,
       description: t("descMenuProducts"),
     },
     {

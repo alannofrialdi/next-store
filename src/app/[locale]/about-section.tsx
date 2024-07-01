@@ -7,7 +7,7 @@ interface AboutSectionProps {
 
 const AboutSection: React.FC<AboutSectionProps> = ({ t }) => {
   return (
-    <section id="about" className="lg:min-h-screen">
+    <section id="about" className="lg:min-h-screen mb-20">
       <Reveal>
         <div className="flex gap-4 p-20 bg-slate-500 dark:bg-transparent lg:flex-row flex-col items-center justify-center">
           <Image
@@ -17,7 +17,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ t }) => {
             height={250}
             className="rounded shadow-xl shadow-slate-800 hover:scale-110 transition duration-500 cursor-pointer"
           />
-          <div className="tracking-wide flex flex-col w-fit mt-4">
+          <div className="tracking-wide flex flex-col w-fit mt-8">
             <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight text-center lg:text-5xl text-[#1f1f1f] dark:text-[#f1f1f1]">
               {t("about")}
             </h1>

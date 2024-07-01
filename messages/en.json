@@ -10,6 +10,14 @@
     "quality": "Quality",
     "cheap": "Cheap",
     "bestSeller": "Best Seller",
-    "descAbout": "Welcome to Alan Store, your premier destination for high-quality shoes that combine comfort, style, and affordability. At Alan Store, we believe that shoes are not just a necessity but an expression of your personal style. We are proud to offer a wide range of meticulously designed shoes to meet every taste and need, from athletic footwear to trendy casual shoes. With a focus on innovation and quality, each pair of shoes we sell undergoes rigorous testing to ensure you get the best. Additionally, we uphold a commitment to sustainability by choosing eco-friendly materials in all our productions. Our team consists of experienced and dedicated professionals who strive to provide the best service to our customers. We are always ready to help you find the perfect shoes for every occasion. Join thousands of satisfied customers and discover for yourself why Alan Store is the best choice for all your footwear needs."
+    "descAbout": "Welcome to Alan Store, your premier destination for high-quality shoes that combine comfort, style, and affordability. At Alan Store, we believe that shoes are not just a necessity but an expression of your personal style. We are proud to offer a wide range of meticulously designed shoes to meet every taste and need, from athletic footwear to trendy casual shoes. With a focus on innovation and quality, each pair of shoes we sell undergoes rigorous testing to ensure you get the best. Additionally, we uphold a commitment to sustainability by choosing eco-friendly materials in all our productions. Our team consists of experienced and dedicated professionals who strive to provide the best service to our customers. We are always ready to help you find the perfect shoes for every occasion. Join thousands of satisfied customers and discover for yourself why Alan Store is the best choice for all your footwear needs.",
+    "usernameRequired": "Username must be at least 2 characters.",
+    "invalidEmail": "Invalid email address.",
+    "name": "Name",
+    "email": "Email",
+    "niceToKnowYou": "Nice to know you!",
+    "weWillNotShareEmail": "We will never share your email with anyone else.",
+    "submit": "Submit",
+    "successfullySubmitted": "Successfully submitted! but this action not added yet :("
   }
 }

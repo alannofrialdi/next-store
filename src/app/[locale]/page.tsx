@@ -10,6 +10,7 @@ import Link from "next/link";
 import BrandSection from "./brand-section";
 import ProductSection from "./product-section";
 import AboutSection from "./about-section";
+import ContactSection from "./contact-section";
 
 type OffsetType = (
   | `${number} ${number}`
@@ -60,6 +61,18 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const alertShown = sessionStorage.getItem("alertShown");
+
+    if (!alertShown) {
+      alert(
+        "Hello, this website made by Alan @alannofr 😁 just to inform u, this web have different behavior in dark mode and this is responsive website. so enjoy! btw this web not completed yet.",
+      );
+
+      sessionStorage.setItem("alertShown", "true");
+    }
+  }, []);
+
   return (
     <div>
       <main className="min-h-dvh">
@@ -70,8 +83,22 @@ export default function Home() {
           <ModeToggle />
         </div>
         <BrandSection t={t} mobile={mobile} />
-        <ProductSection t={t} ref={ref} scrollYProgress={scrollYProgress} />
+        <ProductSection ref={ref} t={t} scrollYProgress={scrollYProgress} />
         <AboutSection t={t} />
+        <ContactSection t={t} />
+        <section id="footer" className="my-2">
+          <p className="text-sm text-center text-muted-foreground">
+            Created by{" "}
+            <Link
+              href="https://www.instagram.com/alannofr/"
+              className="font-bold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @alannof
+            </Link>
+          </p>
+        </section>
       </main>
     </div>
   );
