@@ -8,7 +8,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/theme-switcher";
+import Footer from "./footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,7 +40,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning className="lg:no-scrollbar">
       <body
         className={cn("bg-background font-sans antialiased", fontSans.variable)}
       >
@@ -56,6 +56,7 @@ export default async function RootLayout({
               {children}
             </ThemeProvider>
           </main>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

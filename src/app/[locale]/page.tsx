@@ -86,19 +86,6 @@ export default function Home() {
         <AboutSection t={t} />
         <ProductSection ref={ref} t={t} scrollYProgress={scrollYProgress} />
         <ContactSection t={t} />
-        <section id="footer" className="my-2">
-          <p className="text-sm text-center text-muted-foreground">
-            Created by{" "}
-            <Link
-              href="https://www.instagram.com/alannofr/"
-              className="font-bold"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @alannof
-            </Link>
-          </p>
-        </section>
       </main>
     </div>
   );
