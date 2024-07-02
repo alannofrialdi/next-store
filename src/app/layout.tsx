@@ -20,10 +20,10 @@ export const metadata: Metadata = {
   },
   description: siteMetadata.description,
   openGraph: {
-    title: "Next.js",
-    description: "The React Framework for the Web",
+    title: siteMetadata.title,
+    description: siteMetadata.description,
     url: siteMetadata.siteUrl,
-    siteName: siteMetadata.siteUrl,
+    siteName: siteMetadata.headerTitle,
     locale: "en_US",
     type: "website",
   },
