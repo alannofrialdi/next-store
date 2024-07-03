@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: "Alan Store",
   author: "Alan Store",
-  headerTitle: "Alan Store",
+  headerTitle: "Alan  Store",
   description: "Alan Store provide you comfortable, quality, and cheap shoes",
   language: "id-ID",
   theme: "system",
